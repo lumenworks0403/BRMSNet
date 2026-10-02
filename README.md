@@ -11,7 +11,7 @@
 ![Framework](https://img.shields.io/badge/Framework-PyTorch-ee4c2c?style=flat-square&logo=pytorch&logoColor=white)
 ![Encoder](https://img.shields.io/badge/Encoder-PVTv2--B1-7c3aed?style=flat-square)
 
-[Overview](#overview) &nbsp;·&nbsp; [Architecture](#method) &nbsp;·&nbsp; [Computational Cost](#results) &nbsp;·&nbsp; [Getting Started](#getting-started) &nbsp;·&nbsp; [Code Guide](#code-guide)
+[Overview](#overview) &nbsp;·&nbsp; [Architecture](#method) &nbsp;·&nbsp; [Computational Cost](#results) &nbsp;·&nbsp; [Visualizations](#visualizations) &nbsp;·&nbsp; [Getting Started](#getting-started) &nbsp;·&nbsp; [Code Guide](#code-guide)
 
 </div>
 
@@ -88,6 +88,40 @@ python profile_cpu.py
 ```
 
 The repository includes an architecture diagram. The evaluation script exports prediction visualizations for real images to `predictions_rsod/`.
+
+<a id="visualizations"></a>
+## Visualizations
+
+The following figures present visual results from the manuscript. Click any image to view the original PDF.
+
+### Comparison with Other Methods
+
+<p align="center">
+  <a href="assets/figures/comparison.pdf">
+    <img src="assets/figures/comparison.png" width="100%" alt="Qualitative comparisons of BRMSNet, SDPCNet, GeleNet, and UGNet with ground truth on ORSSD, EORSSD, and RSISOD.">
+  </a>
+</p>
+<p align="center"><em>Qualitative comparisons on ORSSD (rows 1–2), EORSSD (rows 3–4), and RSISOD (rows 5–6). GT denotes ground truth.</em></p>
+
+### Cumulative Ablation Results
+
+<p align="center">
+  <a href="assets/figures/ablation.pdf">
+    <img src="assets/figures/ablation.png" width="100%" alt="Cumulative ablation heatmaps showing the HSSD baseline and successive additions of FDRM, CGAG, and QAMWS on three datasets.">
+  </a>
+</p>
+<p align="center"><em>From left to right after GT: the HSSD baseline, followed by cumulative additions of FDRM, CGAG, and QAMWS. The color bar ranges from 0 to 1.</em></p>
+
+### Accuracy and Efficiency
+
+<p align="center">
+  <a href="assets/figures/efficiency_tradeoff.pdf">
+    <img src="assets/figures/efficiency_tradeoff.png" width="100%" alt="Manuscript comparison of average S-measure versus parameter count and computational cost across methods, with BRMSNet highlighted by a red star.">
+  </a>
+</p>
+<p align="center"><em>Accuracy–efficiency comparison reported in the manuscript. BRMSNet is highlighted by a red star.</em></p>
+
+This figure uses the manuscript measurements of **16.3M parameters and 15.5G FLOPs** for BRMSNet. They differ from the current implementation profiling reported above; the two sets of measurements have not yet been reconciled.
 
 <a id="getting-started"></a>
 ## Getting Started
@@ -218,8 +252,10 @@ The legacy class name `PVTMKUNetB1` remains available as a compatibility alias f
 BRMSNet/
 ├── assets/
 │   └── figures/
-│       ├── framework.pdf       # Original architecture PDF
-│       └── framework.png       # README display image
+│       ├── framework.pdf / .png           # Architecture
+│       ├── comparison.pdf / .png          # Comparison with other methods
+│       ├── ablation.pdf / .png            # Cumulative ablation results
+│       └── efficiency_tradeoff.pdf / .png  # Manuscript accuracy–efficiency figure
 ├── models/
 │   ├── pvt_mkunet.py           # Model, decoder, gates, and refinement
 │   └── qamws.py                # Multi-scale supervision
