@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+.idea/
+.pytest_cache/
+.ruff_cache/
+
+logs/
+model_pth/
+predictions_rsod/
+results_rsod/
+All_RSOD_Runs_Summary.xlsx
+*.log
+
+.venv/
+tmp/
+
+# Local datasets and environment configuration
+data/
+.env
+.env.*
+!.env.example
+
+# Model checkpoints, including those saved outside model_pth/
+*.pth
+*.pt
+*.ckpt
+
+# Local draft figure, not current BRMSNet evaluation results
+efficiency_tradeoff_preview.png
+
+# Local preview and upload bundles
+.preview/
+BRMSNet-github-ready.zip
