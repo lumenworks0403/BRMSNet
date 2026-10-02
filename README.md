@@ -103,15 +103,6 @@ The following figures present visual results from the manuscript. Click any imag
 </p>
 <p align="center"><em>Qualitative comparisons on ORSSD (rows 1–2), EORSSD (rows 3–4), and RSISOD (rows 5–6). GT denotes ground truth.</em></p>
 
-### Cumulative Ablation Results
-
-<p align="center">
-  <a href="assets/figures/ablation.pdf">
-    <img src="assets/figures/ablation.png" width="100%" alt="Cumulative ablation heatmaps showing the HSSD baseline and successive additions of FDRM, CGAG, and QAMWS on three datasets.">
-  </a>
-</p>
-<p align="center"><em>From left to right after GT: the HSSD baseline, followed by cumulative additions of FDRM, CGAG, and QAMWS. The color bar ranges from 0 to 1.</em></p>
-
 ### Accuracy and Efficiency
 
 <p align="center">
@@ -254,7 +245,6 @@ BRMSNet/
 │   └── figures/
 │       ├── framework.pdf / .png           # Architecture
 │       ├── comparison.pdf / .png          # Comparison with other methods
-│       ├── ablation.pdf / .png            # Cumulative ablation results
 │       └── efficiency_tradeoff.pdf / .png  # Manuscript accuracy–efficiency figure
 ├── models/
 │   ├── pvt_mkunet.py           # Model, decoder, gates, and refinement
